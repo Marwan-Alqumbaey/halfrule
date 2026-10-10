@@ -3,6 +3,7 @@ title: "halfrule: optimal eligibility criteria for randomised trials"
 message: "If you use this software, please cite it as below."
 type: software
 version: 0.1.0
+doi: 10.5281/zenodo.23287041
 date-released: 2026-10-10
 license: MIT
 repository-code: "https://github.com/Marwan-Alqumbaey/halfrule"

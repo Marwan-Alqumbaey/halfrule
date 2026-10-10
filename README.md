@@ -1,6 +1,7 @@
 # halfrule
 
 [![check](https://github.com/Marwan-Alqumbaey/halfrule/actions/workflows/check.yml/badge.svg)](https://github.com/Marwan-Alqumbaey/halfrule/actions/workflows/check.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23287041.svg)](https://doi.org/10.5281/zenodo.23287041)
 
 Which patients should a randomised trial enrol?
 
