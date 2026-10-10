@@ -1,0 +1,6 @@
+"scenario","rule","best_simulated","power_best_simulated","power_nearest_rule","largest_error","rule_benefit","best_benefit_simulated"
+"A: even arrival",4.19,4.25,0.7955,0.7955,0.00583240352042946,5.374,5.25
+"B: later arrival more common",4.722,4.75,0.79855,0.79855,0.00927544054041946,5.644,5.5
+"C: binary outcome",4.18,4,0.76465,0.7626,0.00628893100858163,NA,NA
+"D: adjusted analysis",Inf,3,0.97075,0.97075,0.00220582723447538,NA,NA
+"D: unadjusted analysis",1.02630041868625,1,0.7008,0.7008,0.00484787920770469,NA,NA

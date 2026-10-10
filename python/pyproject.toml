@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "halfrule"
+version = "0.1.0"
+description = "Optimal eligibility criteria for randomised trials"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Marwan Alqumbaey", email = "marwanalqumbaey@gmail.com" },
+  { name = "Yousef M. Nasher", email = "yousefnasher76@gmail.com" },
+]
+dependencies = ["numpy>=1.22", "scipy>=1.8"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/Marwan-Alqumbaey/halfrule"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "halfrule: optimal eligibility criteria for randomised trials"
+message: "If you use this software, please cite it as below."
+type: software
+version: 0.1.0
+date-released: 2026-10-10
+license: MIT
+repository-code: "https://github.com/Marwan-Alqumbaey/halfrule"
+abstract: "Finds which patients a randomised trial should enrol when the treatment effect differs between patients and wider eligibility recruits faster."
+keywords:
+  - eligibility criteria
+  - enrichment
+  - sample size
+  - clinical trials
+authors:
+  - family-names: Alqumbaey
+    given-names: Marwan
+    email: marwanalqumbaey@gmail.com
+    orcid: "https://orcid.org/0009-0004-8688-9556"
+    affiliation: "Faculty of Medicine and Health Sciences, Sana'a University, Sana'a, Yemen"
+  - family-names: Nasher
+    given-names: Yousef M.
+    email: yousefnasher76@gmail.com
+    orcid: "https://orcid.org/0009-0001-3704-3149"
+    affiliation: "Faculty of Medicine and Health Sciences, Sana'a University, Sana'a, Yemen"

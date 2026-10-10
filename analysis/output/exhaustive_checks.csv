@@ -1,0 +1,7 @@
+"check","problems","count","largest_shortfall"
+"power: best set found",1000,1000,0
+"cost: best set found",1000,1000,0
+"benefit: best set found",1000,1000,0
+"unadjusted analysis: best set found",1000,998,0.0286259737306119
+"power: best set is a top slice of the ranking",1000,1000,NA
+"more than one top slice meets the half rule",1000,638,NA

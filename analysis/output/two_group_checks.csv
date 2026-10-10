@@ -1,0 +1,4 @@
+"check","cases","correct"
+"exact threshold agrees with direct comparison",1e+05,100000
+"B at least half of A: adding B shortens the trial",50144,50144
+"B below half of A and B together: dropping B shortens the trial",37381,37381

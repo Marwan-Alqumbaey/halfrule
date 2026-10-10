@@ -1,0 +1,17 @@
+# Trial data are not distributed with this repository
+data/
+*.sas7bdat
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rcheck/
+*.tar.gz
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/

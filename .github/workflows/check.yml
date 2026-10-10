@@ -1,0 +1,73 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  r-package:
+    name: R package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          working-directory: r
+          extra-packages: any::rcmdcheck
+          needs: check
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          working-directory: r
+
+  python-package:
+    name: Python package (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install "./python[test]"
+      - run: pytest python/tests
+
+  reproduce:
+    name: Reproduce the paper's results
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          working-directory: r
+          extra-packages: |
+            local::.
+            github::cran/BioPET
+      - name: Keep the published results for comparison
+        run: cp -r analysis/output published_output
+      - name: Run the analysis scripts that do not need the IST-3 data
+        working-directory: analysis
+        run: |
+          Rscript 00_exhaustive_checks.R
+          Rscript 01_published_examples.R
+          Rscript 02_simulation.R
+      - name: Compare with the published results
+        run: |
+          Rscript -e '
+            files <- c("exhaustive_checks.csv", "two_group_checks.csv", "published_examples.csv",
+                       "thresholds_by_power.csv", "simulation_curves.csv", "simulation_summary.csv")
+            ok <- TRUE
+            for (f in files) {
+              a <- read.csv(file.path("published_output", f)); b <- read.csv(file.path("analysis/output", f))
+              same <- isTRUE(all.equal(a, b, tolerance = 1e-8, check.attributes = FALSE))
+              cat(if (same) "same     " else "DIFFERENT", f, "\n")
+              ok <- ok && same
+            }
+            if (!ok) quit(status = 1)'
