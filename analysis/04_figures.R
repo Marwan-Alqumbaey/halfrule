@@ -104,7 +104,3 @@ if (file.exists("output/ist3_arrival.csv")) {
   }
   draw("figure3", 3.3, fig3)
 }
-
-# Record the software versions used by the analysis scripts.
-for (p in c("haven", "BioPET")) if (requireNamespace(p, quietly = TRUE)) loadNamespace(p)
-writeLines(capture.output(sessionInfo()), "output/session_info.txt")

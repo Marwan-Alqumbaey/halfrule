@@ -105,7 +105,7 @@ IST3_PATH=/path/to/datashare_aug2015.sas7bdat Rscript 03_ist3.R
 Rscript 04_figures.R
 ```
 
-Every change to the repository is checked automatically: the R package is checked, the Python tests are run, and scripts `00` to `02` are rerun and compared with the published results. Script `03` needs the `haven` package and the IST-3 data, which are not included here; download them from <https://doi.org/10.7488/ds/1350>. Script `01` uses the `BioPET` package for one comparison and skips it if the package is not installed. The results are written to `analysis/output`, with the software versions in `session_info.txt`, and the figures to `analysis/figures`.
+Every change to the repository is checked automatically: the R package is checked, the Python tests are run, and scripts `00` to `02` are rerun and compared with the published results. Script `03` needs the `haven` package and the IST-3 data, which are not included here; download them from <https://doi.org/10.7488/ds/1350>. Script `01` uses the `BioPET` package for one comparison and skips it if the package is not installed. The results are written to `analysis/output` and the figures to `analysis/figures`.
 
 ## Citation
 
